@@ -1,0 +1,24 @@
+<h1>Lista de Tarefas</h1>
+
+<ul>
+  <li *ngFor="let todo of todos">
+    <span *ngIf="todo.done">OK</span>
+    {{ todo.title }}
+    <button (click)="removeTodo(todo)">Remover</button>
+    <button (click)="markAsDone(todo)">Concluir</button>
+  </li>
+</ul>
+
+<form [formGroup]="form">
+  <input type="text" formControlName="title">
+  <button (click)="addTodo()">Adicionar</button>
+</form>
+
+<!--
+  Chama do HTML para o TS
+  () => HTML > TS
+  Chama do TS para o HTML
+  [] => TS > HTML
+  Via de mão dupla
+  [()] => TS <> HTML
+-->
